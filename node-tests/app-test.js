@@ -1,10 +1,16 @@
 const path = require('path');
+const rimraf = require('rimraf');
 const exec = require('child_process').exec;
 const expect = require('chai').expect;
 const routeMap = require('./results/app.js');
 
 describe('Application', function() {
 	this.timeout(5000);
+	let output = 'myAppRoutes';
+
+	afterEach(function() {
+		rimraf.sync(output);
+	});
 
 	it('it generates the application routemap', async function() {
 		const result = await runRouteMap();
@@ -12,11 +18,21 @@ describe('Application', function() {
 		expect(result.error).to.not.exist;
 		expect(JSON.parse(result.stdout)).to.be.deep.equal(routeMap);
 	});
+
+	it('it does not throw error when output dir does not exist', async function() {
+		const result = await runRouteMap(output);
+
+		expect(result.error).to.not.exist;
+		expect(require('../myAppRoutes/route-map.json')).to.be.deep.equal(routeMap);
+	});
 });
 
-function runRouteMap() {
+function runRouteMap(output) {
 	return new Promise((resolve) => {
-		exec('node_modules/.bin/ember route-map --globs "tests/dummy/app/router.js"', {
+		const outputDir = output ? `--output=${output}` : '';
+		const command = `node_modules/.bin/ember route-map ${outputDir} --globs "tests/dummy/app/router.js"`;
+
+		exec(command, {
 			cwd: path.join(__dirname, '..'),
 			env: process.env
 		}, (error, stdout, stderr) => {
