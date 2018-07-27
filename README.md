@@ -37,7 +37,7 @@ Use `--output` to select an output dir:
 ember route-map --output="reports/route-map/"
 ```
 
-#### Pretty output, save in HTL format
+#### Pretty output, save in HTML format
 
 Use `--pretty` and `--output`:
 
