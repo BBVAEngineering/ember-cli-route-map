@@ -6,6 +6,7 @@
 [![Dependency Status](https://david-dm.org/BBVAEngineering/ember-cli-route-map.svg)](https://david-dm.org/BBVAEngineering/ember-cli-route-map)
 
 Command to generate a route map of your Ember application.
+To see what can be done [visit the example page](https://bbvaengineering.github.io/ember-cli-route-map/), it's the real route map from the [BBVA Mobile App](https://movil.bbva.es/)!
 
 ![ember-cli-route-map](./assets/ember-cli-route-map.jpg)
 
