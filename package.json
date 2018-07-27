@@ -16,7 +16,7 @@
     "build": "ember build",
     "start": "ember server",
     "test": "mocha node-tests --recursive",
-    "lint:js": "eslint --max-warnings 0 ./*.js addon app lib config tests"
+    "lint:js": "eslint ./*.js lib node-tests"
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0"

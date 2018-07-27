@@ -9,6 +9,12 @@ module.exports = {
 	},
 	extends: 'eslint-config-bbva',
 	env: {
-		browser: true
+		node: true,
+		mocha: true
+	},
+	rules: {
+		'no-sync': [0],
+		'no-console': [0],
+		'no-process-expressions': [0]
 	}
 };
