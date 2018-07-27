@@ -9,7 +9,7 @@ Command to generate a route map of your Ember application.
 
 To see what can be done [visit the example page](https://bbvaengineering.github.io/ember-cli-route-map/), it's the real route map from the [BBVA Mobile App](https://movil.bbva.es/)!
 
-![ember-cli-route-map](./assets/ember-cli-route-map.jpg)
+![ember-cli-route-map](https://raw.githubusercontent.com/BBVAEngineering/ember-cli-route-map/master/assets/ember-cli-route-map.jpg)
 
 ## Installation
 
@@ -27,7 +27,7 @@ Run the next command:
 ember route-map
 ```
 
-![console](./assets/console.png)
+![console](https://raw.githubusercontent.com/BBVAEngineering/ember-cli-route-map/master/assets/console.png)
 
 #### Storing the report inside a directory
 
@@ -45,7 +45,7 @@ Use `--pretty` and `--output`:
 ember route-map --output="reports/route-map/" --pretty
 ```
 
-![console](./assets/reports.png)
+![console](https://raw.githubusercontent.com/BBVAEngineering/ember-cli-route-map/master/assets/reports.png)
 
 #### ¿How can I add another directory to the report?
 
