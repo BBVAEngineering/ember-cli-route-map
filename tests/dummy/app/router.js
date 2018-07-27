@@ -7,6 +7,17 @@ const Router = EmberRouter.extend({
 });
 
 Router.map(function() {
+	this.route('prev');
+
+	this.route('main', { path: '/foo' }, function() {
+		this.route('child', function() {
+			this.route('deep');
+		});
+	});
+
+	this.route('next', { foo: 'bar' });
+
+	this.mount('foo');
 });
 
 export default Router;
