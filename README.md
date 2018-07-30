@@ -62,7 +62,7 @@ If you want to contribute to this addon, please read the [CONTRIBUTING.md](CONTR
 
 ## Versioning
 
-We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/BBVAEngineering/ember-cli-remark/tags).
+We use [SemVer](http://semver.org/) for versioning. For the versions available, see the [tags on this repository](https://github.com/BBVAEngineering/ember-cli-route-map/tags).
 
 ## License
 
