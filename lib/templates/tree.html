@@ -27,6 +27,8 @@
 <script src='https://cdnjs.cloudflare.com/ajax/libs/d3/3.5.17/d3.min.js'></script>
 <script>
 const TREE = <%= result %>;
+const NODES_COUNT = <%= nodesCount %>;
+const NODE_HEIGHT = 30; // px
 
 const margin = {
   top: 20,
@@ -35,7 +37,7 @@ const margin = {
   left: 120
 };
 const width = 1960 - margin.right - margin.left;
-const height = 15800 - margin.top - margin.bottom;
+const height = (NODES_COUNT * NODE_HEIGHT) - margin.top - margin.bottom;
 
 let i = 0;
 const duration = 750;
