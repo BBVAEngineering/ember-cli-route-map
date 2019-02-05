@@ -15,6 +15,8 @@ module.exports = {
 	rules: {
 		'no-sync': [0],
 		'no-console': [0],
-		'no-process-expressions': [0]
+		'no-process-env': [0],
+		'no-process-expressions': [0],
+		'no-unused-expressions': [0]
 	}
 };
