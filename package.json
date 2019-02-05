@@ -23,6 +23,7 @@
   },
   "dependencies": {
     "ember-cli-babel": "^6.6.0",
+    "flat": "^4.1.0",
     "mkdirp": "^0.5.1"
   },
   "devDependencies": {
@@ -47,10 +48,9 @@
     "ember-resolver": "^4.0.0",
     "ember-source": "~3.1.0",
     "ember-source-channel-url": "^1.0.1",
-    "ember-try": "^0.2.23",
+    "ember-try": "^1.1.0",
     "eslint": "^5.1.0",
     "eslint-config-bbva": "^2.0.0",
-    "flat": "^4.1.0",
     "loader.js": "^4.2.3",
     "lodash": "^4.17.10",
     "mocha": "^5.0.3",
