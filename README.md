@@ -2,8 +2,15 @@
 
 [![Build Status](https://travis-ci.org/BBVAEngineering/ember-cli-route-map.svg?branch=master)](https://travis-ci.org/BBVAEngineering/ember-cli-route-map)
 [![GitHub version](https://badge.fury.io/gh/BBVAEngineering%2Fember-cli-route-map.svg)](https://badge.fury.io/gh/BBVAEngineering%2Fember-cli-route-map)
-[![npm version](https://badge.fury.io/js/ember-cli-route-map.svg)](https://badge.fury.io/js/ember-cli-route-map)
+[![NPM version](https://badge.fury.io/js/ember-cli-route-map.svg)](https://badge.fury.io/js/ember-cli-route-map)
 [![Dependency Status](https://david-dm.org/BBVAEngineering/ember-cli-route-map.svg)](https://david-dm.org/BBVAEngineering/ember-cli-route-map)
+[![codecov](https://codecov.io/gh/BBVAEngineering/ember-cli-route-map/branch/master/graph/badge.svg)](https://codecov.io/gh/BBVAEngineering/ember-cli-route-map)
+[![Greenkeeper badge](https://badges.greenkeeper.io/BBVAEngineering/ember-cli-route-map.svg)](https://greenkeeper.io/)
+[![Ember Observer Score](https://emberobserver.com/badges/ember-cli-route-map.svg)](https://emberobserver.com/addons/ember-cli-route-map)
+
+## Information
+
+[![NPM](https://nodei.co/npm/ember-cli-route-map.png?downloads=true&downloadRank=true)](https://nodei.co/npm/ember-cli-route-map/)i-route-map)
 
 Command to generate a route map of your Ember application.
 
