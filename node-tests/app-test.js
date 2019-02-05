@@ -1,4 +1,3 @@
-/* eslint-disable no-process-env */
 const path = require('path');
 const rimraf = require('rimraf');
 const exec = require('child_process').exec;
@@ -19,7 +18,6 @@ describe('Application', function() {
 		const result = await runRouteMap();
 
 		expect(result.error).to.not.exist;
-		console.log(result.stdout);
 		expect(JSON.parse(result.stdout)).to.be.deep.equal(routeMap);
 	});
 

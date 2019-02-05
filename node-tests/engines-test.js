@@ -1,4 +1,3 @@
-/* eslint-disable no-process-env */
 const path = require('path');
 const exec = require('child_process').exec;
 const expect = require('chai').expect;
