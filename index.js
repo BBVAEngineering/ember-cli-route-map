@@ -1,7 +1,7 @@
 'use strict';
 
 module.exports = {
-	name: 'ember-cli-route-map',
+	name: require('./package').name
 
 	includedCommands() {
 		return require('./lib/commands');
