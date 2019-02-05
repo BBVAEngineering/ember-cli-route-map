@@ -19,6 +19,7 @@ describe('Application', function() {
 		const result = await runRouteMap();
 
 		expect(result.error).to.not.exist;
+		console.log(result.stdout);
 		expect(JSON.parse(result.stdout)).to.be.deep.equal(routeMap);
 	});
 
