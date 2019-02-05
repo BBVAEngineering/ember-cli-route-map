@@ -1,3 +1,4 @@
+/* eslint-disable no-process-env */
 const path = require('path');
 const rimraf = require('rimraf');
 const exec = require('child_process').exec;
@@ -5,21 +6,23 @@ const expect = require('chai').expect;
 const routeMap = require('./results/app.js');
 
 describe('Application', function() {
-	this.timeout(5000);
-	let output = 'myAppRoutes';
+	const timeout = 5000;
+	const output = 'myAppRoutes';
 
-	afterEach(function() {
+	this.timeout(timeout);
+
+	afterEach(() => {
 		rimraf.sync(output);
 	});
 
-	it('it generates the application routemap', async function() {
+	it('it generates the application routemap', async() => {
 		const result = await runRouteMap();
 
 		expect(result.error).to.not.exist;
 		expect(JSON.parse(result.stdout)).to.be.deep.equal(routeMap);
 	});
 
-	it('it does not throw error when output dir does not exist', async function() {
+	it('it does not throw error when output dir does not exist', async() => {
 		const result = await runRouteMap(output);
 
 		expect(result.error).to.not.exist;
