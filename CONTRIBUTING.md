@@ -4,8 +4,8 @@ This doc outlines the details of collaborating on this Ember addon.
 
 ## Installation
 
-* `git clone https://github.com/BBVAEngineering/ember-cli-route-map` this repository
-* `cd ember-cli-route-map`
+* `git clone <repository-url>` this repository
+* `cd <repository-name>`
 * `npm install`
 
 ## Eslint

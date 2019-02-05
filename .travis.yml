@@ -1,9 +1,8 @@
+---
 language: node_js
+node_js: stable
 sudo: false
 dist: trusty
-
-node_js:
-  - "8"
 
 addons:
   chrome: stable
@@ -11,22 +10,66 @@ addons:
 cache:
   directories:
     - $HOME/.npm
-    - $HOME/.cache # includes bowers cache
+
+env:
+  global:
+    - JOBS=1
+
+jobs:
+  fail_fast: true
+  allow_failures:
+    - env: EMBER_TRY_SCENARIO=ember-canary
+
+  include:
+    - stage: "Tests"
+      before_install:
+        - npm config set spin false
+        - npm install -g npm@6
+        - npm install -g codecov
+        - npm install -g greenkeeper-lockfile@1
+        - npm install -g @commitlint/travis-cli
+        - npm --version
+      install:
+        - if [[ $TRAVIS_BRANCH =~ greenkeeper || $TRAVIS_PULL_REQUEST_BRANCH =~ greenkeeper ]]; then npm install; else npm ci; fi
+      before_script:
+        - greenkeeper-lockfile-update
+      script:
+        - commitlint-travis
+        - npm run lint:js
+        - npm run lint:hbs
+        - npm test
+      after_script:
+        - greenkeeper-lockfile-upload
+      after_success:
+        - codecov --file=coverage/lcov.info
+
+    - stage: "Regression Tests"
+      env: EMBER_TRY_SCENARIO=ember-lts-2.18
+    - env: EMBER_TRY_SCENARIO=ember-lts-3.4
+    - env: EMBER_TRY_SCENARIO=ember-release
+    - env: EMBER_TRY_SCENARIO=ember-beta
+    - env: EMBER_TRY_SCENARIO=ember-canary
+    - env: EMBER_TRY_SCENARIO=ember-default-with-jquery
+
+    - stage: "Release"
+      script: skip
+      deploy:
+        provider: script
+        skip_cleanup: true
+        script:
+          - npx semantic-release
 
 before_install:
   - npm config set spin false
   - npm install -g npm@6
   - npm --version
 
-install:
-  - npm install
-
-before_script:
-  - sudo chown root /opt/google/chrome/chrome-sandbox
-  - sudo chmod 4755 /opt/google/chrome/chrome-sandbox
-
 script:
-  # Usually, it's ok to finish the test scenario without reverting
-  #  to the addon's original dependency state, skipping "cleanup".
-  - npm run lint:js
-  - npm run test
+  - node_modules/.bin/ember try:one $EMBER_TRY_SCENARIO
+
+stages:
+  - "Tests"
+  - "Regression Tests"
+  - name: "Release"
+    if: branch = master
+
