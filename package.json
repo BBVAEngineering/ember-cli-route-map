@@ -18,19 +18,24 @@
   "scripts": {
     "build": "ember build",
     "lint:hbs": "ember-template-lint .",
-    "lint:js": "eslint --max-warnings 0 ./*.js addon app config tests",
+    "lint:js": "eslint --max-warnings 0 ./*.js config tests lib node-tests",
     "start": "ember server",
-    "test": "COVERAGE=true ember test",
-    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 100 --lines 100",
+    "test": "nyc --reporter=html --reporter=json --reporter=json-summary --reporter=lcov --exclude node-tests --exclude **/config/* mocha node-tests --recursive",
+    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 75 --lines 100",
     "commit": "git-cz",
     "posttest": "npm run report-coverage && npm run check-coverage",
     "report-coverage": "istanbul report --include=coverage/coverage-final.json text",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
+    "acorn": "^6.0.7",
+    "acorn-walk": "^6.1.1",
+    "ember-cli": "~3.7.1",
     "ember-cli-babel": "^7.1.2",
     "flat": "^4.1.0",
-    "mkdirp": "^0.5.1"
+    "lodash": "^4.17.10",
+    "mkdirp": "^0.5.1",
+    "walk-sync": "^1.1.3"
   },
   "devDependencies": {
     "@commitlint/cli": "^7.5.0",
@@ -38,12 +43,10 @@
     "@ember/optional-features": "^0.7.0",
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
-    "acorn": "^6.0.7",
     "broccoli-asset-rev": "^3.0.0",
     "chai": "^4.1.2",
     "commitizen": "^3.0.5",
     "cz-conventional-changelog": "^2.1.0",
-    "ember-cli": "~3.7.1",
     "ember-cli-code-coverage": "^1.0.0-beta.8",
     "ember-cli-dependency-checker": "^3.0.0",
     "ember-cli-eslint": "^5.1.0",
@@ -65,19 +68,19 @@
     "eslint": "^5.1.0",
     "eslint-config-bbva": "^2.0.3",
     "eslint-plugin-ember": "^6.2.0",
+    "eslint-plugin-mocha": "^5.2.1",
     "eslint-plugin-node": "^8.0.1",
     "husky": "^1.3.1",
     "istanbul": "^0.4.5",
     "loader.js": "^4.7.0",
-    "lodash": "^4.17.10",
     "mocha": "^5.0.3",
+    "nyc": "^13.2.0",
     "qunit-dom": "^0.8.0",
     "rimraf": "^2.6.2",
-    "semantic-release": "^15.13.3",
-    "walk-sync": "^1.1.3"
+    "semantic-release": "^15.13.3"
   },
   "engines": {
-    "node": "6.* || 8.* || >= 10.*"
+    "node": "8.* || >= 10.*"
   },
   "ember-addon": {
     "configPath": "tests/dummy/config"

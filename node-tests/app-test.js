@@ -32,7 +32,7 @@ describe('Application', function() {
 function runRouteMap(output) {
 	return new Promise((resolve) => {
 		const outputDir = output ? `--output=${output}` : '';
-		const command = `node_modules/.bin/ember route-map ${outputDir} --globs "tests/dummy/app/router.js"`;
+		const command = `node_modules/.bin/ember route-map ${outputDir} --pretty --globs "tests/dummy/app/router.js"`;
 
 		exec(command, {
 			cwd: path.join(__dirname, '..'),
