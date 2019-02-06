@@ -10,7 +10,7 @@
 
 ## Information
 
-[![NPM](https://nodei.co/npm/ember-cli-route-map.png?downloads=true&downloadRank=true)](https://nodei.co/npm/ember-cli-route-map/)i-route-map)
+[![NPM](https://nodei.co/npm/ember-cli-route-map.png?downloads=true&downloadRank=true)](https://nodei.co/npm/ember-cli-route-map/)
 
 Command to generate a route map of your Ember application.
 
