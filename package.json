@@ -21,7 +21,7 @@
     "lint:js": "eslint --max-warnings 0 ./*.js config tests lib node-tests",
     "start": "ember server",
     "test": "nyc --reporter=html --reporter=json --reporter=json-summary --reporter=lcov --exclude node-tests --exclude **/config/* mocha node-tests --recursive",
-    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 75 --lines 100",
+    "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 80 --lines 100",
     "commit": "git-cz",
     "posttest": "npm run report-coverage && npm run check-coverage",
     "report-coverage": "istanbul report --include=coverage/coverage-final.json text",
