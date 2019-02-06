@@ -57,11 +57,10 @@ module.exports = {
 			mocha: true,
 			node: true
 		},
-		plugins: ['mocha'],
-		rules: {
+		rules: Object.assign({}, require('eslint-plugin-node').configs.recommended.rules, {
 			'no-process-env': 0,
 			'no-unused-expressions': 0,
-			'mocha/no-exclusive-tests': 'error'
-		}
+			'node/no-unpublished-require': 0
+		})
 	}]
 };

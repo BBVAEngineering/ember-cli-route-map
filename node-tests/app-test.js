@@ -25,7 +25,7 @@ describe('Application', function() {
 		const result = await runRouteMap(output);
 
 		expect(result.error).to.not.exist;
-		expect(require('../myAppRoutes/route-map.json')).to.be.deep.equal(routeMap);
+		expect(require('../myAppRoutes/route-map.json')).to.be.deep.equal(routeMap); // eslint-disable-line node/no-missing-require
 	});
 });
 
