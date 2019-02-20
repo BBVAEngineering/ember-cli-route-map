@@ -23,8 +23,9 @@
     "test": "nyc --reporter=html --reporter=json --reporter=json-summary --reporter=lcov --exclude node-tests --exclude **/config/* mocha node-tests --recursive",
     "check-coverage": "istanbul check-coverage coverage/coverage-final.json --statements 100 --functions 100 --branches 80 --lines 100",
     "commit": "git-cz",
-    "posttest": "npm run report-coverage && npm run check-coverage",
+    "posttest": "npm run report-coverage && npm run check-coverage && npm run validate-coverage",
     "report-coverage": "istanbul report --include=coverage/coverage-final.json text",
+    "validate-coverage": "test \"$(cat coverage/coverage-summary.json | json total.lines.total)\" -gt 0",
     "semantic-release": "semantic-release"
   },
   "dependencies": {
@@ -33,6 +34,7 @@
     "ember-cli": "~3.7.1",
     "ember-cli-babel": "^7.4.3",
     "flat": "^4.1.0",
+    "json": "^9.0.6",
     "lodash": "^4.17.10",
     "mkdirp": "^0.5.1",
     "walk-sync": "^1.1.3"
@@ -64,7 +66,7 @@
     "ember-resolver": "^5.1.1",
     "ember-source": "^3.8.0",
     "ember-source-channel-url": "^1.1.0",
-    "ember-try": "^1.1.0",
+    "ember-try": "~0.2.23",
     "eslint": "^5.14.1",
     "eslint-config-bbva": "^2.0.3",
     "eslint-plugin-ember": "^6.2.0",
