@@ -1,3 +1,10 @@
+## [0.0.10](https://github.com/BBVAEngineering/ember-cli-route-map/compare/v0.0.9...v0.0.10) (2019-07-16)
+
+
+### Bug Fixes
+
+* **package:** update ember-cli to version 3.11.0 ([631933b](https://github.com/BBVAEngineering/ember-cli-route-map/commit/631933b))
+
 ## [0.0.9](https://github.com/BBVAEngineering/ember-cli-route-map/compare/v0.0.8...v0.0.9) (2019-06-28)
 
 
