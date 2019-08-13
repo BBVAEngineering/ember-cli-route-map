@@ -30,7 +30,7 @@
   },
   "dependencies": {
     "acorn": "^6.1.0",
-    "acorn-walk": "^6.1.1",
+    "acorn-walk": "^7.0.0",
     "ember-cli": "~3.11.0",
     "ember-cli-babel": "^7.5.0",
     "flat": "^4.1.0",
